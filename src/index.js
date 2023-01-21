@@ -4,7 +4,8 @@ const handler = (request, response) => {
     const { url, method } = request
     const [first, route, id] = url.split('/')
     request.queryString = { id: isNaN(id) ? id : Number(id)}
-    console.log(request.queryString)
+    const key = `/${route}:${method.toLowerCase()}`
+    console.log('key', key)
     response.end()
 }
 
