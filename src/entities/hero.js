@@ -1,6 +1,6 @@
 class Hero {
     constructor({ id, name, age, power }) {
-        this.id = id
+        this.id = Math.floor(Math.random() * 100) + Date.now()
         this.name = name
         this.age = age
         this.power = power
@@ -11,11 +11,14 @@ class Hero {
             .map(property => (!!this[property]) ? null : `${property} is missing!`)
             .filter(item => !!item)
 
-        console.log('amountInvalid', amountInvalid)
+        return {
+            valid: amountInvalid.length === 0,
+            error: amountInvalid
+        }
     }
 }
 
 module.exports = Hero
 
-const hero = new Hero({ id: 2, name: "Chapolin", age: 80, power: "weakness"})
-console.log('valid', hero.isValid())
+const hero = new Hero({ name: "Chapolin", age: 80, power: "weakness"})
+console.log('valid', hero)
