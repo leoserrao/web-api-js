@@ -20,5 +20,5 @@ class Hero {
 
 module.exports = Hero
 
-const hero = new Hero({ name: "Chapolin", age: 80, power: "weakness"})
-console.log('valid', hero)
+/* const hero = new Hero({ name: "Chapolin", age: 80, power: "weakness"})
+console.log('valid', hero) */
