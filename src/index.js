@@ -2,9 +2,9 @@ const http = require('http')
 const PORT = 3000
 const handler = (request, response) => {
     const { url, method } = request
-    console.log({
-        url, method
-    })
+    const [first, route, id] = url.split('/')
+    console.log('route', route)
+    console.log('id', id)
     response.end()
 }
 
