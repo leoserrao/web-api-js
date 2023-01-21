@@ -7,7 +7,11 @@ class Hero {
     }
     isValid() {
         const propertyNames = Object.getOwnPropertyNames(this)
-        console.log('propertyNames', propertyNames)
+        const amountInvalid = propertyNames
+            .map(property => (!!this[property]) ? null : `${property} is missing!`)
+            .filter(item => !!item)
+
+        console.log('amountInvalid', amountInvalid)
     }
 }
 
